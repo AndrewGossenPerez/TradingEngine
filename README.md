@@ -6,13 +6,8 @@ A work-in-progress trading engine with a C++ backtester and a Python front-end f
 ## Features
 - [x] Modular strategy framework  
 - [x] Historical market data ingestion (csv) 
-- [X] Backtesting engine
-- [X] Event-driven architecture 
-- [ ] Full order lifecycle management (create / modify / cancel / fill)  
-- [ ] Support for common order types (market / limit / stop)  
-- [ ] Simulated exchange / matching engine  
-- [ ] Position tracking & real-time PnL calculation  
-- [ ] Risk controls (max exposure, stop-loss, take-profit, capital limits)  
+- [X] Backtesting engine (Event-driven architecture ) 
+- [ ] Orderbooking during Excecution
 - [ ] Trade logging & performance analytics  
 - [ ] Config-driven system (strategies, instruments, risk parameters)  
 - [ ] Live trading integration *(future)*  
