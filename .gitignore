@@ -1,5 +1,0 @@
-build/
-*.o
-*.out
-.DS_Store
-*.vscode

@@ -40,9 +40,9 @@ static void nextLine(const char*& p, const char* end){
 template<typename T>
 static bool parseOHLCV(const char*&p,const char* end, T& out){
 
-    // Parses the OHLCV portion of a csv (Open,high,low,close,volume)
-    double v = 0.0;
-    const char* start = p;
+    // Parses the OHLCV columns of a csv (Open,high,low,close,volume)
+    double v=0.0;
+    const char* start=p;
 
     // Sum up the integer parts before the decimal point is reached 
     while (p < end) {
@@ -54,7 +54,7 @@ static bool parseOHLCV(const char*&p,const char* end, T& out){
     // Sum up fractional parts after the decimal point is reached 
     if (p < end && *p == '.') {
         ++p;
-        double place = 0.1;
+        double place=0.1;
         while (p < end) {
             char c = *p;
             if (c >= '0' && c <= '9') { v += (c - '0') * place; place *= 0.1; ++p; }
