@@ -1,6 +1,5 @@
 
 #include <iostream>
-
 #include "core/types.hpp"
 #include "data/bar.hpp"
 #include "backtesting/backtesting.hpp"
@@ -8,7 +7,6 @@
 #include "events/dispatcher.hpp"
 #include "events/events.hpp"
 #include "data/market_state.hpp"
-
 #include "pipeline/strategy_handler.hpp"
 #include "pipeline/risk_handler.hpp"
 #include "pipeline/portfolio_handler.hpp"
@@ -57,8 +55,6 @@ trd::Result trd::Backtest::run(const std::vector<trd::Bar>& bars,Strategy& strat
             events::MarketEvent{marketState.current,marketState.next}
         );
         bus.dispatchAll();
-        //auto eq = m_portfolio.equity(marketState.current.close);
-       // std::cout << "[EQUITY] " << eq << " pos=" << m_portfolio.pos << "\n";
     }
 
     result.finalEquity=m_portfolio.equity(bars.back().close);

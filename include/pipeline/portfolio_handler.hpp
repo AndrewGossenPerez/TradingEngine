@@ -26,7 +26,6 @@ class PortfolioHandler{
 
     }
 
-    
     private: 
 
     Portfolio& m_portfolio;

@@ -21,7 +21,7 @@ class ReportHandler{
             // Log this trade 
             m_trades.emplace_back( 
                 trd::TradeLog{
-                    m_marketState.current.epoch,
+                    ev->epoch,
                     ev->side,
                     ev->qty,
                     ev->px,
