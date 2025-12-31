@@ -13,3 +13,4 @@ A work-in-progress trading engine with a C++ backtester and a Python front-end f
 - [ ] Live trading integration *(future)*  
 - [ ] Multi-threaded execution *(future)*
 - [ ] Python Interface
+- [ ] Optimisation 
