@@ -20,13 +20,11 @@ class ReportHandler{
         if (auto* ev=std::get_if<events::FillEvent>(&event)){
             // Log this trade 
             m_trades.emplace_back( 
-                trd::TradeLog{
                     ev->epoch,
                     ev->side,
                     ev->qty,
                     ev->px,
                     ev->fee
-                }
             );
 
             m_result.netFees+=ev->fee;
@@ -34,10 +32,8 @@ class ReportHandler{
         } else if (auto* ev=std::get_if<events::MarketEvent>(&event)){
             // Log equity 
             m_equityCurve.emplace_back( 
-                trd::EquityPoint{ 
                     m_marketState.current.epoch,
                     m_portfolio.equity(m_marketState.current.close)
-                }
             );
 
         }
