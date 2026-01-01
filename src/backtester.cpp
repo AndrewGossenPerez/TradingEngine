@@ -8,16 +8,17 @@
 #include "events/events.hpp"
 #include "data/market_state.hpp"
 
-
 trd::Result trd::Backtest::run(const std::vector<trd::Bar>& bars,Strategy& strategy){
 
     // Event-driven backtester 
+    // For each bar creates a marketEvent
+    // This marketEvent is handled by the strategy handler which produces it's own event to be handled by yet another handler
+    // This process repeats/propagates through the pipeline, eventually reaching the FillEvent if a trade has been excecuted 
 
     MarketState marketState;
     trd::Result result;
 
-
-    if (bars.size()<2) { // Not enough sufficent bars 
+    if (bars.size()<2) { // Not enough bars to do a simulation, in reality no one should be using this engine on so little bars anyway 
         result.finalEquity= bars.empty() ? 0.0 : m_portfolio.equity(bars.back().close);
         return result;
     }

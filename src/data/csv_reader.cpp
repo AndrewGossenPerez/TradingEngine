@@ -108,7 +108,7 @@ static bool parseYMD(const char*&p,const char* end, trd::timestamp& out){
     
 }
 
-// -- Defined functions
+// -- Defined method functions
 
 std::vector<trd::Bar> trd::csvReader::loadBars(const std::string& file){
 
